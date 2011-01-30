@@ -25,10 +25,10 @@
 ## iPhone
 
 [![](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Portrait-Arrow.png)](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Portrait-Arrow.png)
-[![](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Portrait-Arrow.png)](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Portrait-Standard.png)
+[![](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Portrait-Standard.png)](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Portrait-Standard.png)
 
 [![](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Landscape-Arrow.png)](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Landscape-Arrow.png)
-[![](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Landscape-Arrow.png)](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Landscape-Standard.png)
+[![](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Landscape-Standard.png)](https://github.com/davidmorford/TabBarKit/raw/master/Documents/TabBar-iPhone-Landscape-Standard.png)
 
 ## iPad
 
