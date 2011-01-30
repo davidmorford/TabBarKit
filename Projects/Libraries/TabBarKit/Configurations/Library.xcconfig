@@ -1,0 +1,23 @@
+
+//
+// TabBarKit/Configurations/Library.xcconfig
+//
+
+#include "../../../Configurations/Library.xcconfig"
+#include "../../../Configurations/Libraries.xcconfig"
+
+// Product Name
+PRODUCT_NAME = TabBarKit
+
+// Library Version
+BUILD_LIBRARY_VERSION = A
+
+// Library Resource Bundle
+LIBRARY_RESOURCE_BUNDLE_NAME = TabBarKit.bundle
+
+// Clang
+RUN_CLANG_STATIC_ANALYZER = YES
+
+// Search Paths
+HEADER_SEARCH_PATHS  = $(STDLIB_HEADER_PATH)
+LIBRARY_SEARCH_PATHS = $(STDLIB_LIBRARY_PATH)

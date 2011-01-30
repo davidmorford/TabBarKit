@@ -1,0 +1,7 @@
+
+//
+// TabBarKit/Configurations/Project.xcconfig
+//
+
+#include "../../../Configurations/Platform.xcconfig"
+#include "../../../Configurations/Project.xcconfig"

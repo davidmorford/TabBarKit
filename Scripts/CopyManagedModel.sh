@@ -1,0 +1,4 @@
+#!/bin/tcsh
+
+rm -dRfv ${CONTENTS_FOLDER_PATH}/$2
+cp -Rfv ${BUILD_SHARED_BUNDLES_PATH}/$1/Models/$2 ${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}

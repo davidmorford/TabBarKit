@@ -1,0 +1,16 @@
+
+//
+// Libraries.xcconfig
+// Local Libraries - Declarations by alpha. Order unimportant.
+// (c) 2008 - 2011, Semantap
+//
+
+#include "Frameworks.xcconfig"
+
+// TabBarKit
+
+TABBARKIT_HEADER_PATH                  = $(BUILD_PLATFORM_NAME_PATH)/TabBarKit/Headers/
+TABBARKIT_PRIVATEHEADER_PATH           = $(BUILD_PLATFORM_NAME_PATH)/TabBarKit/PrivateHeaders/
+TABBARKIT_LIBRARY_PATH                 = $(BUILD_PLATFORM_NAME_PATH)/TabBarKit/
+TABBARKIT_LIBRARY_FLAG                 = -lTabBarKit
+TABBARKIT_RESOURCE_BUNDLE_NAME         = TabBarKit.bundle

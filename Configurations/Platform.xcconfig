@@ -1,0 +1,10 @@
+
+//
+// Platform.xcconfig
+// (c) 2008 - 2011, Semantap
+//
+
+SDKROOT		= iphoneos
+ARCHS		= $(ARCHS_STANDARD_32_BIT)
+TARGETED_DEVICE_FAMILY = 1,2
+IPHONEOS_DEPLOYMENT_TARGET = 4.2

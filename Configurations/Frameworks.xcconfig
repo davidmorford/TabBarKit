@@ -1,0 +1,78 @@
+
+//
+// Frameworks.xcconfig
+// (c) 2008 - 2011, Semantap
+//
+
+// ObjC Library / Runtime
+
+OBJC_LIBRARY            = -ObjC
+OBJC_ALLLOAD            = -all_load
+OBJC_LIB                = -lobjc
+
+// stdlib / libSystem
+
+STDLIB_HEADER_PATH		= /usr/include
+STDLIB_LIBRARY_PATH		= /usr/lib
+
+// Lib Z compression
+
+LIBZ_LIB                = -lz
+
+// LibXML2
+
+LIBXML2_HEADERS         = /usr/include/libxml2
+LIBXML2_LIBRARY         = /usr/lib
+LIBXML2_LIB             = -lxml2
+
+// LibXML2
+
+LIBSQLITE3_HEADER_PATH	= /usr/include
+LIBSQLITE3_LIBRARY_PATH = /usr/lib
+LIBSQLITE3_LIBRARY_FLAG	= -lsqlite3
+
+
+// Frameworks - iOS 4.2
+
+ACCELERATE_FX           = -framework Accelerate
+ADDRESSBOOK_FX          = -framework AddressBook
+ADDRESSBOOKUI_FX        = -framework AddressBookUI
+ASSETSLIBRARY_FX        = -framework AssetsLibrary
+AUDIOTOOLBOX_FX         = -framework AudioToolbox
+AUDIOUNIT_FX            = -framework AudioUnit
+AVFOUNDATION_FX         = -framework AVFoundation
+CFNETWORK_FX            = -framework CFNetwork
+COREAUDIO_FX            = -framework CoreAudio
+COREDATA_FX             = -framework CoreData
+COREFOUNDATION_FX       = -framework CoreFoundation
+COREGRAPHICS_FX         = -framework CoreGraphics
+CORELOCATION_FX         = -framework CoreLocation
+COREMEDIA_FX            = -framework CoreMedia
+COREMIDI_FX             = -framework CoreMIDI
+COREMOTION_FX           = -framework CoreMotion
+CORETELEPHONY_FX        = -framework CoreTelephony
+CORETEXT_FX             = -framework CoreText
+COREVIDEO_FX            = -framework CoreVideo
+EVENTKIT_FX             = -framework EventKit
+EVENTKITUI_FX           = -framework EventKitUI
+EXTERNALACCESSORY_FX    = -framework ExternalAccessory
+FOUNDATION_FX           = -framework Foundation
+GAMEKIT_FX              = -framework GameKit
+IAD_FX                  = -framework iAd
+IMAGEIO_FX              = -framework ImageIO
+MAPKIT_FX               = -framework MapKit
+MEDIAPLAYER_FX          = -framework MediaPlayer
+MESSAGEUI_FX            = -framework MessageUI
+MOBILECORESERVICES_FX   = -framework MobileCoreServices
+OPENAL_FX               = -framework OpenAL
+OPENGLES_FX             = -framework OpenGLES
+QUARTZCORE_FX           = -framework QuartzCore
+QUICKLOOK_FX            = -framework QuickLook
+SECURITY_FX             = -framework Security
+STOREKIT_FX             = -framework StoreKit
+SYSTEMCONFIGURATION_FX  = -framework SystemConfiguration
+UIKIT_FX                = -framework UIKit
+
+// Frameworks - Testing
+
+SENTESTINGKIT_FX        = -framework SenTestingKit

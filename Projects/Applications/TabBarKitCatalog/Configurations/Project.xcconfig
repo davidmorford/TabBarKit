@@ -1,0 +1,9 @@
+
+//
+// TabBarKitCatalog/Configurations/Project.xcconfig
+//
+
+#include "../../../Configurations/Platform.xcconfig"
+#include "../../../Configurations/Project.xcconfig"
+
+CODE_SIGN_IDENTITY = iPhone Developer
