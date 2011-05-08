@@ -1,0 +1,6 @@
+
+//
+// CodeSignIdentity.xcconfig
+//
+
+CODE_SIGN_IDENTITY = iPhone Developer

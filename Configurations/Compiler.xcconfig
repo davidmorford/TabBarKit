@@ -1,19 +1,16 @@
 
 //
 // Compiler.xcconfig
-// (c) 2010 - 2011, Semantap
 //
 
-GCC_C_LANGUAGE_STANDARD			= c99
-GCC_WARN_ABOUT_RETURN_TYPE		= YES
-GCC_WARN_UNUSED_VARIABLE		= YES
-GCC_ENABLE_OBJC_EXCEPTIONS		= YES
-GCC_ENABLE_FIX_AND_CONTINUE		= NO
+ALWAYS_SEARCH_USER_PATHS = NO
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+GCC_C_LANGUAGE_STANDARD = c99
+GCC_WARN_ABOUT_RETURN_TYPE = YES
+GCC_WARN_UNUSED_VARIABLE = YES
+GCC_ENABLE_OBJC_EXCEPTIONS = YES
+GCC_ENABLE_FIX_AND_CONTINUE = NO
+PREBINDING = NO
+ZERO_LINK = NO
 
-// 4.2, com.apple.compilers.llvmgcc42
-GCC_VERSION						= com.apple.compilers.llvm.clang.1_0
-
-// Warning:
-// - Fails in latest Xcode 4 DP when using Clang 2.0
-// - Currently works in with iOS 4.3 Beta 1 with Clang 1.7
-OTHER_CFLAGS					= -Xclang -fobjc-nonfragile-abi2
+GCC_VERSION = com.apple.compilers.llvm.clang.1_0

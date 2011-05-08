@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../../Scripts/Build.command">
+   </FileRef>
+   <Group
+      location = "group:../../Configurations"
+      name = "Configurations">
+      <FileRef
+         location = "group:Application.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:CodeSignIdentity.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Compiler.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Debug.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:DeploymentTarget.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:DeviceiPad.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:DeviceiPhone.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:DeviceUniversal.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Frameworks.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Libraries.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Library.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Paths.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Platform.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Profile.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Project.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Release.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:Scripts.xcconfig">
+      </FileRef>
+      <FileRef
+         location = "group:UnitTests.xcconfig">
+      </FileRef>
+   </Group>
+   <FileRef
+      location = "group:TabBarKitCatalog/TabBarKitCatalog.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:../Libraries/TabBarKit/TabBarKit.xcodeproj">
+   </FileRef>
+</Workspace>

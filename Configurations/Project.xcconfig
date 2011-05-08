@@ -1,17 +1,12 @@
 
 //
 // Project.xcconfig
-// (c) 2008 - 2011, Semantap
 //
 
-#include "Settings.xcconfig"
+#include "Paths.xcconfig"
 #include "Compiler.xcconfig"
 
-SYMROOT							= Build
-CODE_SIGN_IDENTITY				= iPhone Developer
-
-ZERO_LINK						= NO
-PREBINDING						= NO
-ALWAYS_SEARCH_USER_PATHS		= NO
-
-DEBUG_INFORMATION_FORMAT		= dwarf-with-dsym
+SYMROOT = Build
+//SOURCE_ROOT = Source
+//SRCROOT = Source
+CODE_SIGN_IDENTITY = iPhone Developer

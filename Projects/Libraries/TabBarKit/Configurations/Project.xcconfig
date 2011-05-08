@@ -3,5 +3,6 @@
 // TabBarKit/Configurations/Project.xcconfig
 //
 
+#include "../../../Configurations/Paths.xcconfig"
 #include "../../../Configurations/Platform.xcconfig"
 #include "../../../Configurations/Project.xcconfig"

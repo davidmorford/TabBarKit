@@ -1,41 +1,50 @@
 
 //
 // Library.xcconfig
-// Static Library for Objective-C and C.
-// (c) 2008 - 2011, Semantap
+// Obj-C/C iOS Static Library Layout, Deployment and Project Structure
 //
 
-GCC_PRECOMPILE_PREFIX_HEADER                    = NO
+GCC_PRECOMPILE_PREFIX_HEADER = NO
 
+//
 // Override in Library.xcconfig in Xcode Library project.
+//
 
-RUN_CLANG_STATIC_ANALYZER                       = NO
+RUN_CLANG_STATIC_ANALYZER = NO
 
+//
 // Library Project Directories
+//
 
-SYMROOT                                         = Build
-PROJECT_TREE_SOURCE_PATH                        = Source
-PROJECT_TREE_CLASSES_PATH                       = $(PROJECT_TREE_SOURCE_PATH)/Classes
-PROJECT_TREE_PROJECT_PATH                       = $(PROJECT_TREE_SOURCE_PATH)/Project
-PROJECT_TREE_RESOURCES_PATH                     = $(PROJECT_TREE_SOURCE_PATH)/Resources
-PROJECT_TREE_UNITTESTS_PATH                     = $(PROJECT_TREE_SOURCE_PATH)/UnitTests
+SYMROOT = Build
+PROJECT_TREE_SOURCE_PATH = $(SRCROOT)
+PROJECT_TREE_CLASSES_PATH = $(PROJECT_TREE_SOURCE_PATH)/Classes
+PROJECT_TREE_PROJECT_PATH = $(PROJECT_TREE_SOURCE_PATH)/Project
+PROJECT_TREE_RESOURCES_PATH = $(PROJECT_TREE_SOURCE_PATH)/Resources
+PROJECT_TREE_UNITTESTS_PATH = $(PROJECT_TREE_SOURCE_PATH)/UnitTests
 
-LIBRARY_RESOURCES_PATH                          = $(PROJECT_TREE_PROJECT_PATH)/Resources
-LIBRARY_RESOURCE_BUNDLE_PATH                    = $(PROJECT_TREE_RESOURCES_PATH)/Bundles
+LIBRARY_RESOURCES_PATH = $(PROJECT_TREE_PROJECT_PATH)/Resources
+LIBRARY_RESOURCE_BUNDLE_PATH = $(PROJECT_TREE_RESOURCES_PATH)/Bundles
 
-// Library
+//
+// Library Directory Structure (Following the general format of .framework's)
+//
 
-BUILD_LIBRARY_VERSION_NAME                      = A
-BUILD_LIBRARY_VERSION_PATH                      = Versions/$(BUILD_LIBRARY_VERSION_NAME)
-BUILD_LIBRARY_HEADERS_PATH                      = Headers
-BUILD_LIBRARY_PRIVATEHEADERS_PATH               = PrivateHeaders
-BUILD_LIBRARY_RESOURCES_PATH                    = Resources
+BUILD_LIBRARY_VERSION_NAME = A
+BUILD_LIBRARY_VERSION_PATH = Versions/$(BUILD_LIBRARY_VERSION_NAME)
+BUILD_LIBRARY_HEADERS_PATH = Headers
+BUILD_LIBRARY_PRIVATEHEADERS_PATH = PrivateHeaders
+BUILD_LIBRARY_RESOURCES_PATH = Resources
 
-PUBLIC_HEADERS_FOLDER_PATH                      = /$(PRODUCT_NAME)/$(BUILD_LIBRARY_HEADERS_PATH)
-PRIVATE_HEADERS_FOLDER_PATH                     = /$(PRODUCT_NAME)/$(BUILD_LIBRARY_PRIVATEHEADERS_PATH)
+// Prefix with a starting '/'
 
+PUBLIC_HEADERS_FOLDER_PATH = /$(PRODUCT_NAME)/$(BUILD_LIBRARY_HEADERS_PATH)
+PRIVATE_HEADERS_FOLDER_PATH = /$(PRODUCT_NAME)/$(BUILD_LIBRARY_PRIVATEHEADERS_PATH)
+
+//
 // Library Deployment Paths
-// – Used by Scripts/DeployLibrary.sh $(SCRIPT_DEPLOY_LIBRARY) to deploy the library to the shared build location.
+// - Used by Scripts/DeployLibrary.sh $(SCRIPT_DEPLOY_LIBRARY) to deploy the library to the shared build location.
+//
 
 DEPLOYED_BUILD_PLATFORM_PATH					= $(BUILD_PLATFORM_NAME_PATH)
 DEPLOYED_BUILD_PRODUCT_NAME_PATH				= $(BUILD_PLATFORM_NAME_PATH)/$(PRODUCT_NAME)

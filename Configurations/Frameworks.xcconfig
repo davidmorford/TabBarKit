@@ -1,29 +1,28 @@
 
 //
 // Frameworks.xcconfig
-// (c) 2008 - 2011, Semantap
 //
 
 // ObjC Library / Runtime
 
-OBJC_LIBRARY            = -ObjC
-OBJC_ALLLOAD            = -all_load
-OBJC_LIB                = -lobjc
+OBJC_LIBRARY = -ObjC
+OBJC_ALLLOAD = -all_load
+OBJC_LIB = -lobjc
 
 // stdlib / libSystem
 
-STDLIB_HEADER_PATH		= /usr/include
-STDLIB_LIBRARY_PATH		= /usr/lib
+STDLIB_HEADER_PATH = /usr/include
+STDLIB_LIBRARY_PATH = /usr/lib
 
 // Lib Z compression
 
-LIBZ_LIB                = -lz
+LIBZ_LIB = -lz
 
 // LibXML2
 
-LIBXML2_HEADERS         = /usr/include/libxml2
-LIBXML2_LIBRARY         = /usr/lib
-LIBXML2_LIB             = -lxml2
+LIBXML2_HEADERS = /usr/include/libxml2
+LIBXML2_LIBRARY = /usr/lib
+LIBXML2_LIB = -lxml2
 
 // LibXML2
 
@@ -31,8 +30,9 @@ LIBSQLITE3_HEADER_PATH	= /usr/include
 LIBSQLITE3_LIBRARY_PATH = /usr/lib
 LIBSQLITE3_LIBRARY_FLAG	= -lsqlite3
 
-
-// Frameworks - iOS 4.2
+//
+// Frameworks as iOS 4.2. (Mostly here for reference sake. Use Xcode to add frameworks to project targets
+//
 
 ACCELERATE_FX           = -framework Accelerate
 ADDRESSBOOK_FX          = -framework AddressBook
@@ -76,3 +76,7 @@ UIKIT_FX                = -framework UIKit
 // Frameworks - Testing
 
 SENTESTINGKIT_FX        = -framework SenTestingKit
+
+// Framework Search Paths
+
+//FRAMEWORK_SEARCH_PATHS  = $(SDKROOT)/Developer/Library/Frameworks

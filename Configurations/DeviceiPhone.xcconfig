@@ -1,0 +1,6 @@
+
+//
+// DeviceiPhone.xcconfig
+//
+
+TARGETED_DEVICE_FAMILY = 1

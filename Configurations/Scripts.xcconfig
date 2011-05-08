@@ -1,14 +1,15 @@
 
 //
 // Scripts.xcconfig
-// (c) 2008 - 2011, Semantap
+//
+// Scripts that create the top level Build directory for a project tree
+// and deploy static libraries and resource bundles
 //
 
-BUILD_SCRIPTS_PATH              = $(SRCROOT)/../../../Scripts
+BUILD_SCRIPTS_PATH = $(SRCROOT)/../../../Scripts
 
-SCRIPT_DEPLOY_LIBRARY			= $(BUILD_SCRIPTS_PATH)/DeployLibrary.sh
-SCRIPT_DEPLOY_RESOURCE_BUNDLE	= $(BUILD_SCRIPTS_PATH)/DeployResourceBundle.sh
-SCRIPT_DEPLOY_MANAGED_MODEL     = $(BUILD_SCRIPTS_PATH)/DeployManagedModel.sh
-
-SCRIPT_COPY_RESOURCE_BUNDLE     = $(BUILD_SCRIPTS_PATH)/CopyResourceBundle.sh
-SCRIPT_COPY_MANAGED_MODEL       = $(BUILD_SCRIPTS_PATH)/CopyManagedModel.sh
+SCRIPT_DEPLOY_LIBRARY = $(BUILD_SCRIPTS_PATH)/DeployLibrary.sh
+SCRIPT_DEPLOY_RESOURCE_BUNDLE = $(BUILD_SCRIPTS_PATH)/DeployResourceBundle.sh
+SCRIPT_DEPLOY_MANAGED_MODEL = $(BUILD_SCRIPTS_PATH)/DeployManagedModel.sh
+SCRIPT_COPY_RESOURCE_BUNDLE = $(BUILD_SCRIPTS_PATH)/CopyResourceBundle.sh
+SCRIPT_COPY_MANAGED_MODEL = $(BUILD_SCRIPTS_PATH)/CopyManagedModel.sh

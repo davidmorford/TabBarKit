@@ -1,10 +1,13 @@
 
 //
 // Platform.xcconfig
-// (c) 2008 - 2011, Semantap
+//
+// • Always use latest SDK target and do proper checks for existence of symbols, classes, selectors and functions.
+// • Weak linking with frameworks that have newer symbols is also an option but comes at a performance cost.
 //
 
-SDKROOT		= iphoneos
-ARCHS		= $(ARCHS_STANDARD_32_BIT)
-TARGETED_DEVICE_FAMILY = 1,2
-IPHONEOS_DEPLOYMENT_TARGET = 4.2
+#include "DeviceUniversal.xcconfig"
+#include "DeploymentTarget.xcconfig"
+
+SDKROOT = iphoneos
+ARCHS = $(ARCHS_STANDARD_32_BIT)

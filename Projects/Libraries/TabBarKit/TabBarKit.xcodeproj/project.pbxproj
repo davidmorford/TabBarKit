@@ -47,7 +47,6 @@
 		63894BE4103BD59B007C9CC9 /* Library.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Library.xcconfig; path = Configurations/Library.xcconfig; sourceTree = SOURCE_ROOT; };
 		63894BE5103BD59B007C9CC9 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Project.xcconfig; path = Configurations/Project.xcconfig; sourceTree = SOURCE_ROOT; };
 		63894BEB103BD5C1007C9CC9 /* TabBarKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabBarKit.h; path = Source/Project/TabBarKit.h; sourceTree = SOURCE_ROOT; };
-		63B6A8911041465B0049EC9C /* Settings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Settings.xcconfig; path = Configurations/Settings.xcconfig; sourceTree = SOURCE_ROOT; };
 		63D9E28C12C594980083EEB8 /* NSObject+TBKAssociatedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+TBKAssociatedObject.h"; path = "Source/Categories/NSObject+TBKAssociatedObject.h"; sourceTree = SOURCE_ROOT; };
 		63D9E28D12C594980083EEB8 /* NSObject+TBKAssociatedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TBKAssociatedObject.m"; sourceTree = "<group>"; };
 		63D9E2CB12C5A0EF0083EEB8 /* UIImage+TBKMasking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+TBKMasking.h"; path = "Source/Categories/UIImage+TBKMasking.h"; sourceTree = SOURCE_ROOT; };
@@ -61,6 +60,8 @@
 		63E4E4421289F73B008AFD0A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		63E4E4441289F73B008AFD0A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		63E4E4461289F73B008AFD0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		63F7E3D2137655D40053B106 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		63F7E3D3137655D40053B106 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTabBarKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTabBarKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -150,9 +151,10 @@
 		63894BE2103BD59B007C9CC9 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				63894BE4103BD59B007C9CC9 /* Library.xcconfig */,
-				63B6A8911041465B0049EC9C /* Settings.xcconfig */,
 				63894BE5103BD59B007C9CC9 /* Project.xcconfig */,
+				63894BE4103BD59B007C9CC9 /* Library.xcconfig */,
+				63F7E3D2137655D40053B106 /* Debug.xcconfig */,
+				63F7E3D3137655D40053B106 /* Release.xcconfig */,
 			);
 			path = Configurations;
 			sourceTree = SOURCE_ROOT;
@@ -338,16 +340,14 @@
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63894BE4103BD59B007C9CC9 /* Library.xcconfig */;
+			baseConfigurationReference = 63F7E3D2137655D40053B106 /* Debug.xcconfig */;
 			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
 			};
 			name = Debug;
 		};
 		1DEB922008733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63894BE4103BD59B007C9CC9 /* Library.xcconfig */;
+			baseConfigurationReference = 63F7E3D3137655D40053B106 /* Release.xcconfig */;
 			buildSettings = {
 			};
 			name = Release;
@@ -356,8 +356,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63894BE5103BD59B007C9CC9 /* Project.xcconfig */;
 			buildSettings = {
-				GCC_OPTIMIZATION_LEVEL = 0;
-				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -365,42 +363,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63894BE5103BD59B007C9CC9 /* Project.xcconfig */;
 			buildSettings = {
-				SDKROOT = iphoneos;
 			};
 			name = Release;
-		};
-		63894C01103BE1FD007C9CC9 /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63894BE5103BD59B007C9CC9 /* Project.xcconfig */;
-			buildSettings = {
-				GCC_OPTIMIZATION_LEVEL = 0;
-				SDKROOT = iphoneos;
-			};
-			name = Profile;
-		};
-		63894C02103BE1FD007C9CC9 /* Profile */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63894BE4103BD59B007C9CC9 /* Library.xcconfig */;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-			};
-			name = Profile;
-		};
-		63894C04103BE202007C9CC9 /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63894BE5103BD59B007C9CC9 /* Project.xcconfig */;
-			buildSettings = {
-				SDKROOT = iphoneos;
-			};
-			name = Distribution;
-		};
-		63894C05103BE202007C9CC9 /* Distribution */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 63894BE4103BD59B007C9CC9 /* Library.xcconfig */;
-			buildSettings = {
-			};
-			name = Distribution;
 		};
 /* End XCBuildConfiguration section */
 
@@ -409,9 +373,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB921F08733DC00010E9CD /* Debug */,
-				63894C02103BE1FD007C9CC9 /* Profile */,
 				1DEB922008733DC00010E9CD /* Release */,
-				63894C05103BE202007C9CC9 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -420,9 +382,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
-				63894C01103BE1FD007C9CC9 /* Profile */,
 				1DEB922408733DC00010E9CD /* Release */,
-				63894C04103BE202007C9CC9 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

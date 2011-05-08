@@ -1,0 +1,6 @@
+
+//
+// DeviceiPad.xcconfig
+//
+
+TARGETED_DEVICE_FAMILY = 2

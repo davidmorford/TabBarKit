@@ -1,0 +1,6 @@
+
+//
+// DeviceUniversal.xcconfig
+//
+
+TARGETED_DEVICE_FAMILY = 1,2

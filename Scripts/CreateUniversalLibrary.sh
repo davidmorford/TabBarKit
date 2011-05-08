@@ -1,5 +1,7 @@
 #!/bin/tcsh
 
+# Untested but started as method to create binary distributions of static libraries...
+
 # Create local psudeo-platform
 
 IOS_PLATFORM_NAME_DEVICE = iphoneos
@@ -23,4 +25,4 @@ mkdir -p ${BUILD_SHARED_BUNDLES_PATH}
 mkdir -p ${BUILD_SHARED_LIBRARIES_PATH}
 mkdir -p ${BUILD_SHARED_LIBRARIES_PATH/$(CONFIGURATION)/$(EFFECTIVE_PLATFORM_NAME)-universal
 
-# ditto -c -k --keepParent ${PROJECT_DIR}/build/${BUILD_STYLE}-iphoneos/DTUtilities ${PROJECT_DIR}/build/${BUILD_STYLE}-iphoneos/DTUtilities.zip
+# ditto -c -k --keepParent ${PROJECT_DIR}/build/${BUILD_STYLE}-iphoneos/ ${PROJECT_DIR}/build/${BUILD_STYLE}-iphoneos/

@@ -1,0 +1,11 @@
+
+//
+// TabBarKitCatalog/Configurations/Release.xcconfig
+//
+// Customize with settings specific to release mode
+//
+
+#include "Application.xcconfig"
+#include "../../../Configurations/Release.xcconfig"
+
+//GCC_PREPROCESSOR_DEFINITIONS = NDEBUG
