@@ -19,8 +19,7 @@
 
 ## Requirements
 
-* SDK : 4.2 or greater
-* Set OTHER_CFLAGS to -Xclang -fobjc-nonfragile-abi2. Comment out or remove this flag settin from Configurations/Compiler.xcconfig if building with a recent Xcode 4 DP.
+* Xcode 4.0.2 or greater and iOS SDK 4.3.x or greater
 
 ## iPhone
 
@@ -37,6 +36,7 @@
 
 ## History
 
+### May 7, 2011 - Updated for Xcode 4
 ### January 30, 2011 - Public release
 
 
