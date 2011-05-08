@@ -3,8 +3,8 @@
 
 ## Highlights
 
-* No images whatsoever. Bar, tab item selections and arrow indicator are implemented as CALayers.
-* Tab bar and tab items support two styles, a standard appearance a la UITabBar or with an arrow indicator a la Tweetie / Twitter)/
+* No backing or support images required to draw the tab bar interface. The bar, tab item selections and arrow indicator are implemented as CALayers.
+* Tab bar and tab items support two styles, a standard appearance a la UITabBar or with an arrow indicator a la Tweetie / Twitter).
 * UIImage category takes black images masks and renders with gray and blue selection gradients like UITabBar/UITabBarItem
 * Uses UIView block animations to respect the hidesBottomBarWhenPushed property on contained UIViewControllers.
 * Uses ObjC associatedObject API to associate tab items and the tab controller with contained view controllers.
