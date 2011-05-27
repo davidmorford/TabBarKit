@@ -60,8 +60,8 @@
 		63E4E4421289F73B008AFD0A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		63E4E4441289F73B008AFD0A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		63E4E4461289F73B008AFD0A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		63F7E3D2137655D40053B106 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		63F7E3D3137655D40053B106 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		63F7E3D2137655D40053B106 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		63F7E3D3137655D40053B106 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libTabBarKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libTabBarKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -130,19 +130,10 @@
 			name = UnitTest;
 			sourceTree = "<group>";
 		};
-		63843AB81041213200D29404 /* Project */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Project;
-			sourceTree = "<group>";
-		};
 		63894BE0103BD587007C9CC9 /* References */ = {
 			isa = PBXGroup;
 			children = (
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
-				63894C11103BE467007C9CC9 /* Libraries */,
-				63843AB81041213200D29404 /* Project */,
 				63843AB71041212700D29404 /* UnitTest */,
 			);
 			name = References;
@@ -198,13 +189,6 @@
 			name = Bundles;
 			path = Source/Resources/Bundles;
 			sourceTree = SOURCE_ROOT;
-		};
-		63894C11103BE467007C9CC9 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Libraries;
-			sourceTree = "<group>";
 		};
 		63D9E28B12C594980083EEB8 /* Categories */ = {
 			isa = PBXGroup;
@@ -281,7 +265,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = Semantap;
+				ORGANIZATIONNAME = "Your Company";
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TabBarKit" */;
 			compatibilityVersion = "Xcode 3.2";

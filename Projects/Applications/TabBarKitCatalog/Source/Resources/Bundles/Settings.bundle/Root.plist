@@ -2,52 +2,52 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>StringsTable</key>
-	<string>Root</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
 			<key>Title</key>
 			<string>About</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Version</string>
-			<key>DefaultValue</key>
-			<string>1.0</string>
-			<key>Key</key>
-			<string>TabBarKitCatalogApplicationVersionKey</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>Build</string>
-			<key>DefaultValue</key>
-			<string>1A30</string>
-			<key>Key</key>
-			<string>TabBarKitCatalogApplicationBuildNumberKey</string>
-		</dict>
-		<dict>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>Libraries</string>
 		</dict>
 		<dict>
+			<key>DefaultValue</key>
+			<string>2.1</string>
+			<key>Key</key>
+			<string>TabBarKitCatalogApplicationVersionKey</string>
+			<key>Title</key>
+			<string>Version</string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>TabBarKit Version</string>
+		</dict>
+		<dict>
 			<key>DefaultValue</key>
-			<string>1A30</string>
+			<string>1A1</string>
+			<key>Key</key>
+			<string>TabBarKitCatalogApplicationBuildNumberKey</string>
+			<key>Title</key>
+			<string>Build</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Libraries</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>DefaultValue</key>
+			<string>1A1</string>
 			<key>Key</key>
 			<string>TabBarKitLibraryVersionKey</string>
+			<key>Title</key>
+			<string>TabBarKit Version</string>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
 		</dict>
 	</array>
+	<key>StringsTable</key>
+	<string>Root</string>
 </dict>
 </plist>

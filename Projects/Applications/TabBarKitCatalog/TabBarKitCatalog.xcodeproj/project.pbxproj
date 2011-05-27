@@ -99,8 +99,8 @@
 		63F77EB212F007BD008C61E0 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings@2x.png"; path = "Source/Resources/Media/Images/Tabs/Settings@2x.png"; sourceTree = SOURCE_ROOT; };
 		63F77EB312F007BD008C61E0 /* Super8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Super8.png; path = Source/Resources/Media/Images/Tabs/Super8.png; sourceTree = SOURCE_ROOT; };
 		63F77EB412F007BD008C61E0 /* Super8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Super8@2x.png"; path = "Source/Resources/Media/Images/Tabs/Super8@2x.png"; sourceTree = SOURCE_ROOT; };
-		63F7E3DA137656490053B106 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		63F7E3DB137656490053B106 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		63F7E3DA137656490053B106 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Configurations/Debug.xcconfig; sourceTree = SOURCE_ROOT; };
+		63F7E3DB137656490053B106 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Configurations/Release.xcconfig; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
