@@ -125,6 +125,10 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 	self.tabBar.items = controllerTabs;
 }
 
+-(void) unloadViewControllers {
+
+}
+
 
 #pragma mark <TBKTabBarDelegate>
 
@@ -270,13 +274,15 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 
 #pragma mark Memory
 
--(void) viewDidUnload {
-	self.tabBar = nil;
-	[super viewDidUnload];
-}
-
 -(void) didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
+}
+
+-(void) viewDidUnload {
+	tabBar.delegate = nil;
+	[tabBar release]; tabBar = nil;
+    [containerView release]; containerView = nil;
+	[super viewDidUnload];
 }
 
 -(void) dealloc {
@@ -296,54 +302,54 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 
 @implementation UIViewController (TBKTabBarControllerItem)
 
-static char TBKTabItemKey;
-static char TBKTabControllerKey;
+static NSString * const TBKTabItemKey = @"TBKTabItemKey";
+static NSString * const TBKTabControllerKey = @"TBKTabControllerKey";
 
 @dynamic tabItem;
 @dynamic tabController;
 
 -(TBKTabBarItem *) tabItem {
-	return [self associatedValueForKey:&TBKTabItemKey];
+	return [self associatedValueForKey:TBKTabItemKey];
 }
 
 -(void) setTabItem:(TBKTabBarItem *)anItem {
 	if (anItem) {
-		if ([self associatedValueForKey:&TBKTabItemKey] != nil) {
-			TBKTabBarItem *associatedItem = (TBKTabBarItem *)[self associatedValueForKey:&TBKTabItemKey];
+		if ([self associatedValueForKey:TBKTabItemKey] != nil) {
+			TBKTabBarItem *associatedItem = (TBKTabBarItem *)[self associatedValueForKey:TBKTabItemKey];
 			if (associatedItem != anItem) {
-				[self associateValue:nil withKey:&TBKTabItemKey policy:TBKAssociationPolicyAssign];
-				[self associateValue:anItem withKey:&TBKTabItemKey policy:TBKAssociationPolicyRetainNonatomic];
+				[self associateValue:nil withKey:TBKTabItemKey policy:TBKAssociationPolicyAssign];
+				[self associateValue:anItem withKey:TBKTabItemKey policy:TBKAssociationPolicyRetainNonatomic];
 			}
-			[self associateValue:nil withKey:&TBKTabItemKey policy:TBKAssociationPolicyAssign];
+			[self associateValue:nil withKey:TBKTabItemKey policy:TBKAssociationPolicyAssign];
 		}
 		else {
-			[self associateValue:anItem withKey:&TBKTabItemKey policy:TBKAssociationPolicyRetainNonatomic];
+			[self associateValue:anItem withKey:TBKTabItemKey policy:TBKAssociationPolicyRetainNonatomic];
 		}
 	}
 	else {
-		[self associateValue:nil withKey:&TBKTabItemKey policy:TBKAssociationPolicyAssign];
+		[self associateValue:nil withKey:TBKTabItemKey policy:TBKAssociationPolicyAssign];
 	}
 }
 
 -(TBKTabBarController *) tabController {
-	return [self associatedValueForKey:&TBKTabControllerKey];
+	return [self associatedValueForKey:TBKTabControllerKey];
 }
 
 -(void) setTabController:(TBKTabBarController *)aTabController {
 	if (aTabController) {
-		if ([self associatedValueForKey:&TBKTabControllerKey] != nil) {
-			TBKTabBarController *associatedController = (TBKTabBarController *)[self associatedValueForKey:&TBKTabControllerKey];
+		if ([self associatedValueForKey:TBKTabControllerKey] != nil) {
+			TBKTabBarController *associatedController = (TBKTabBarController *)[self associatedValueForKey:TBKTabControllerKey];
 			if (associatedController != aTabController) {
-				[self associateValue:nil withKey:&TBKTabControllerKey policy:TBKAssociationPolicyAssign];
-				[self associateValue:aTabController withKey:&TBKTabControllerKey policy:TBKAssociationPolicyRetainNonatomic];
+				[self associateValue:nil withKey:TBKTabControllerKey policy:TBKAssociationPolicyAssign];
+				[self associateValue:aTabController withKey:TBKTabControllerKey policy:TBKAssociationPolicyRetainNonatomic];
 			}
 		}
 		else {
-			[self associateValue:aTabController withKey:&TBKTabControllerKey policy:TBKAssociationPolicyRetainNonatomic];
+			[self associateValue:aTabController withKey:TBKTabControllerKey policy:TBKAssociationPolicyRetainNonatomic];
 		}
 	}
 	else {
-		[self associateValue:nil withKey:&TBKTabControllerKey policy:TBKAssociationPolicyAssign];
+		[self associateValue:nil withKey:TBKTabControllerKey policy:TBKAssociationPolicyAssign];
 	}
 }
 

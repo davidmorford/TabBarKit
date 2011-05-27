@@ -25,14 +25,14 @@ enum {
 */
 @interface NSObject (TBKAssociatedObject)
 
--(id) associatedValueForKey:(void *)aKey;
+-(id) associatedValueForKey:(NSString *)aKey;
 
 /*!
 @abstract Retains value
 */
--(void) associateValue:(id)aValue withKey:(void *)aKey;
+-(void) associateValue:(id)aValue withKey:(NSString *)aKey;
 
--(void) removeAssociatedValueForKey:(void *)aKey;
+-(void) removeAssociatedValueForKey:(NSString *)aKey;
 
 /*!
 @method associateValue:withKey:policy:
@@ -43,6 +43,6 @@ contained view controllers without requiring a silly protocol or subclass. Yum.
 @param aKey 
 @param aPolicy 
 */
--(void) associateValue:(id)aValue withKey:(void *)aKey policy:(TBKAssociationPolicy)aPolicy;
+-(void) associateValue:(id)aValue withKey:(NSString *)aKey policy:(TBKAssociationPolicy)aPolicy;
 
 @end
