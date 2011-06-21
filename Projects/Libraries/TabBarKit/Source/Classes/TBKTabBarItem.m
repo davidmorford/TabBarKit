@@ -216,7 +216,7 @@
 }
 
 -(void) setBadgeValue:(NSNumber *)aValue {
-	if ([badgeValue compare:aValue] != NSOrderedSame)( {
+	if ([badgeValue compare:aValue] != NSOrderedSame) {
 		[badgeValue release];
 		badgeValue = [aValue copy];
 	}
