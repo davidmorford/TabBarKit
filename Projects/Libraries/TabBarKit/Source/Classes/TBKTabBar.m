@@ -74,10 +74,10 @@
 	self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin;
 	
 	if (self.tabBarStyle == TBKTabBarStyleArrowIndicator) {
-		self.arrowLayer = [[TBKArrowLayer alloc] init];
+		arrowLayer = [[TBKArrowLayer alloc] init];
 		CGRect arrowFrame = self.arrowLayer.frame;
 		arrowFrame.origin.y = -(arrowFrame.size.height - 2.5f);
-		self.arrowLayer.frame = arrowFrame;
+		arrowLayer.frame = arrowFrame;
 	}
 
 	CAGradientLayer *backingLayer = (CAGradientLayer *)self.layer;

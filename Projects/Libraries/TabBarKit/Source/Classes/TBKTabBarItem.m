@@ -196,7 +196,7 @@
 	[super setSelected:flag];
 	[self.selectionLayer removeFromSuperlayer];
 	self.selectionLayer = nil;
-	self.selectionLayer = [[TBKTabBarItemSelectionLayer alloc] initWithItemFrame:self.bounds style:self.selectionStyle];
+	selectionLayer = [[TBKTabBarItemSelectionLayer alloc] initWithItemFrame:self.bounds style:self.selectionStyle];
 	if (flag) {
 		if (![self.layer.sublayers containsObject:self.selectionLayer]) {
 			[self.layer addSublayer:self.selectionLayer];
@@ -221,7 +221,7 @@
 		badgeValue = [aValue copy];
 	}
 	if (!self.badgeLayer) {
-		self.badgeLayer = [[TBKBadgeLayer alloc] initWithFrame:self.bounds count:[aValue stringValue]];
+		badgeLayer = [[TBKBadgeLayer alloc] initWithFrame:self.bounds count:[aValue stringValue]];
 		[self.layer addSublayer:self.badgeLayer];
 	}
 	if (self.badgeLayer && [aValue unsignedIntegerValue] == 0) {
