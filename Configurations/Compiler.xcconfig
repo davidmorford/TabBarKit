@@ -16,6 +16,6 @@ ZERO_LINK = NO
 
 GCC_VERSION = com.apple.compilers.llvm.clang.1_0
 
-//CLANG_ENABLE_OBJC_ARC = NO
+CLANG_ENABLE_OBJC_ARC = YES
 
 //LLVM_LTO = NO

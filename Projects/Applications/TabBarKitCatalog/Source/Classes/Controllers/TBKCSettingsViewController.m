@@ -48,7 +48,7 @@
 	static NSString *CellIdentifier = @"CellIdentifier";
 	UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
 	cell.textLabel.text = [NSString stringWithFormat:@"Settings %d", anIndexPath.row];
@@ -63,10 +63,6 @@
 
 -(void) viewDidUnload {
 	[super viewDidUnload];
-}
-
--(void) dealloc {
-	[super dealloc];
 }
 
 @end

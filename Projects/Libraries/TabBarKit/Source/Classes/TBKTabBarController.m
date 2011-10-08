@@ -69,14 +69,14 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 	[super viewDidLoad];
 	self.view.backgroundColor = [UIColor clearColor];
 		
-	self.containerView = [[[UIView alloc] initWithFrame:self.view.frame] autorelease];
-	self.view = self.containerView;
+	containerView = [[UIView alloc] initWithFrame:self.view.frame];
+	self.view = containerView;
 	
-	self.tabBar = [[[TBKTabBar alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - self.tabBarHeight, CGRectGetWidth(self.view.bounds), self.tabBarHeight) 
-											  style:self.tabBarStyle] autorelease];
-	self.tabBar.delegate = self;
+    tabBar = [[TBKTabBar alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - self.tabBarHeight, CGRectGetWidth(self.view.bounds), self.tabBarHeight) 
+											  style:self.tabBarStyle];
+	tabBar.delegate = self;
 	
-	[self.containerView addSubview:self.tabBar];
+	[containerView addSubview:tabBar];
 	[self loadViewControllers];
 }
 
@@ -112,17 +112,19 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 -(void) loadViewControllers {
 	NSMutableArray *controllerTabs = [NSMutableArray arrayWithCapacity:[self.viewControllers count]];
 	NSUInteger tagIndex = 0;
-	for (UIViewController *controller in self.viewControllers) {
-		if ([controller isKindOfClass:[UINavigationController class]]) {
+	for (UIViewController *controller in self.viewControllers)
+    {
+		if ([controller isKindOfClass:[UINavigationController class]])
+        {
 			((UINavigationController *)controller).delegate = self;
 		}
-		TBKTabBarItem *tabItem = [[[TBKTabBarItem alloc] initWithImageName:controller.tabImageName style:self.tabBarStyle tag:tagIndex title:controller.title] autorelease];
+		TBKTabBarItem *tabItem = [[TBKTabBarItem alloc] initWithImageName:controller.tabImageName style:self.tabBarStyle tag:tagIndex title:controller.title];
 		[controllerTabs addObject:tabItem];
 		[controller setTabItem:tabItem];
 		[controller setTabController:self];
 		tagIndex++;
 	}
-	self.tabBar.items = controllerTabs;
+	tabBar.items = controllerTabs;
 }
 
 -(void) unloadViewControllers {
@@ -285,20 +287,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 
 -(void) viewDidUnload {
 	tabBar.delegate = nil;
-	[tabBar release]; tabBar = nil;
-    [containerView release]; containerView = nil;
 	[super viewDidUnload];
-}
-
--(void) dealloc {
-	self.delegate = nil;
-	self.moreNavigationController = nil;
-	self.customizableViewControllers = nil;
-	self.selectedViewController = nil;
-	self.viewControllers = nil;
-	self.tabBar = nil;
-	self.containerView = nil;
-	[super dealloc];
 }
 
 @end
@@ -307,54 +296,54 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 
 @implementation UIViewController (TBKTabBarControllerItem)
 
-static NSString * const TBKTabItemKey = @"TBKTabItemKey";
-static NSString * const TBKTabControllerKey = @"TBKTabControllerKey";
+static char TBKTabItemKey;
+static char TBKTabControllerKey;
 
 @dynamic tabItem;
 @dynamic tabController;
 
 -(TBKTabBarItem *) tabItem {
-	return [self associatedValueForKey:TBKTabItemKey];
+	return [self associatedValueForKey:&TBKTabItemKey];
 }
 
 -(void) setTabItem:(TBKTabBarItem *)anItem {
 	if (anItem) {
-		if ([self associatedValueForKey:TBKTabItemKey] != nil) {
-			TBKTabBarItem *associatedItem = (TBKTabBarItem *)[self associatedValueForKey:TBKTabItemKey];
+		if ([self associatedValueForKey:&TBKTabItemKey] != nil) {
+			TBKTabBarItem *associatedItem = (TBKTabBarItem *)[self associatedValueForKey:&TBKTabItemKey];
 			if (associatedItem != anItem) {
-				[self associateValue:nil withKey:TBKTabItemKey policy:TBKAssociationPolicyAssign];
-				[self associateValue:anItem withKey:TBKTabItemKey policy:TBKAssociationPolicyRetainNonatomic];
+				[self associateValue:nil withKey:&TBKTabItemKey policy:TBKAssociationPolicyAssign];
+				[self associateValue:anItem withKey:&TBKTabItemKey policy:TBKAssociationPolicyRetainNonatomic];
 			}
-			[self associateValue:nil withKey:TBKTabItemKey policy:TBKAssociationPolicyAssign];
+			[self associateValue:nil withKey:&TBKTabItemKey policy:TBKAssociationPolicyAssign];
 		}
 		else {
-			[self associateValue:anItem withKey:TBKTabItemKey policy:TBKAssociationPolicyRetainNonatomic];
+			[self associateValue:anItem withKey:&TBKTabItemKey policy:TBKAssociationPolicyRetainNonatomic];
 		}
 	}
 	else {
-		[self associateValue:nil withKey:TBKTabItemKey policy:TBKAssociationPolicyAssign];
+		[self associateValue:nil withKey:&TBKTabItemKey policy:TBKAssociationPolicyAssign];
 	}
 }
 
 -(TBKTabBarController *) tabController {
-	return [self associatedValueForKey:TBKTabControllerKey];
+	return [self associatedValueForKey:&TBKTabControllerKey];
 }
 
 -(void) setTabController:(TBKTabBarController *)aTabController {
 	if (aTabController) {
-		if ([self associatedValueForKey:TBKTabControllerKey] != nil) {
-			TBKTabBarController *associatedController = (TBKTabBarController *)[self associatedValueForKey:TBKTabControllerKey];
+		if ([self associatedValueForKey:&TBKTabControllerKey] != nil) {
+			TBKTabBarController *associatedController = (TBKTabBarController *)[self associatedValueForKey:&TBKTabControllerKey];
 			if (associatedController != aTabController) {
-				[self associateValue:nil withKey:TBKTabControllerKey policy:TBKAssociationPolicyAssign];
-				[self associateValue:aTabController withKey:TBKTabControllerKey policy:TBKAssociationPolicyRetainNonatomic];
+				[self associateValue:nil withKey:&TBKTabControllerKey policy:TBKAssociationPolicyAssign];
+				[self associateValue:aTabController withKey:&TBKTabControllerKey policy:TBKAssociationPolicyRetainNonatomic];
 			}
 		}
 		else {
-			[self associateValue:aTabController withKey:TBKTabControllerKey policy:TBKAssociationPolicyRetainNonatomic];
+			[self associateValue:aTabController withKey:&TBKTabControllerKey policy:TBKAssociationPolicyRetainNonatomic];
 		}
 	}
 	else {
-		[self associateValue:nil withKey:TBKTabControllerKey policy:TBKAssociationPolicyAssign];
+		[self associateValue:nil withKey:&TBKTabControllerKey policy:TBKAssociationPolicyAssign];
 	}
 }
 
@@ -425,8 +414,9 @@ static NSString * const TBKTabControllerKey = @"TBKTabControllerKey";
 -(UITableViewCell *) tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)anIndexPath {
 	static NSString *TBKMoreCellIdentifier = @"TBKMoreCellID";
 	UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:TBKMoreCellIdentifier];
-	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TBKMoreCellIdentifier] autorelease];
+	if (cell == nil)
+    {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TBKMoreCellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	
@@ -473,11 +463,6 @@ static NSString * const TBKTabControllerKey = @"TBKTabControllerKey";
 
 -(void) didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
-}
-
--(void) dealloc {
-	self.moreViewControllers = nil;
-	[super dealloc];
 }
 
 @end

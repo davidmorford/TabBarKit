@@ -97,11 +97,6 @@
 	[self setNeedsDisplay];
 }
 
-
--(void) dealloc {
-	[super dealloc];
-}
-
 @end
 
 #pragma mark -
@@ -116,8 +111,8 @@
 @property (nonatomic, retain) NSString *tabTitle;
 @property (nonatomic, assign) BOOL displayTitle;
 
-@property (nonatomic, assign) TBKTabBarItemSelectionLayer *selectionLayer;
-@property (nonatomic, assign) TBKBadgeLayer *badgeLayer;
+@property (nonatomic, retain) TBKTabBarItemSelectionLayer *selectionLayer;
+@property (nonatomic, retain) TBKBadgeLayer *badgeLayer;
 @end
 
 #pragma mark -
@@ -217,7 +212,6 @@
 
 -(void) setBadgeValue:(NSNumber *)aValue {
 	if ([badgeValue compare:aValue] != NSOrderedSame) {
-		[badgeValue release];
 		badgeValue = [aValue copy];
 	}
 	if (!self.badgeLayer) {
@@ -231,20 +225,6 @@
 	else {
 		[self.badgeLayer setCountString:[aValue stringValue]];
 	}
-}
-
-
-
-#pragma mark -
-
--(void) dealloc {
-	self.tabTitle = nil;
-	self.controllerTitle = nil;
-	self.badgeValue = nil;
-	self.imageName = nil;
-	self.tabImage = nil;
-	self.selectedTabImage = nil;
-	[super dealloc];
 }
 
 @end

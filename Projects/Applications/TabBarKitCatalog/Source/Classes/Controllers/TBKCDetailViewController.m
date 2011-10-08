@@ -43,8 +43,9 @@
 -(UITableViewCell *) tableView:(UITableView *)tv cellForRowAtIndexPath:(NSIndexPath *)anIndexPath {
 	static NSString *CellIdentifier = @"CellIdentifier";
 	UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:CellIdentifier];
-	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+	if (cell == nil)
+    {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -59,7 +60,6 @@
 	[aTableView deselectRowAtIndexPath:indexPath animated:YES];
 	TBKCContentViewController *contentViewController = [[TBKCContentViewController alloc] init];
 	[self.navigationController pushViewController:contentViewController animated:TRUE];
-	[contentViewController release];
 }
 
 
@@ -71,10 +71,6 @@
 
 -(void) didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
-}
-
--(void) dealloc {
-	[super dealloc];
 }
 
 @end

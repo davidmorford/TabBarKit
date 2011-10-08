@@ -51,7 +51,7 @@
 						[ar addObject:(id)c.CGColor];
 					}
 					CGColorSpaceRef space = CGBitmapContextGetColorSpace(context);
-					CGGradientRef gradient = CGGradientCreateWithColors(space, (CFArrayRef)ar, NULL);
+					CGGradientRef gradient = CGGradientCreateWithColors(space, (__bridge CFArrayRef)ar, NULL); //__bridge_retained
 					CGContextDrawLinearGradient(context, 
 												gradient, 
 												CGPointMake(rect.origin.x, rect.origin.y + rect.size.height),  //BUGBUG: Flip?

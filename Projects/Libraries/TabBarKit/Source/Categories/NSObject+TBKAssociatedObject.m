@@ -3,19 +3,19 @@
 
 @implementation NSObject (TBKAssociatedObject)
 
--(void) associateValue:(id)aValue withKey:(NSString *)aKey {
+-(void) associateValue:(id)aValue withKey:(void *)aKey {
 	objc_setAssociatedObject(self, aKey, aValue, TBKAssociationPolicyRetainNonatomic);
 }
 
--(void) associateValue:(id)aValue withKey:(NSString *)aKey policy:(TBKAssociationPolicy)aPolicy;{
+-(void) associateValue:(id)aValue withKey:(void *)aKey policy:(TBKAssociationPolicy)aPolicy {
 	objc_setAssociatedObject(self, aKey, aValue, aPolicy);
 }
 
--(id) associatedValueForKey:(NSString *)aKey {
+-(id) associatedValueForKey:(void *)aKey {
 	return objc_getAssociatedObject(self, aKey);
 }
 
--(void) removeAssociatedValueForKey:(NSString *)aKey {
+-(void) removeAssociatedValueForKey:(void *)aKey {
 	[self associateValue:nil withKey:aKey policy:TBKAssociationPolicyAssign];
 }
 

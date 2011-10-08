@@ -28,16 +28,12 @@
 	return self;
 }
 
--(void) dealloc {
-	[super dealloc];
-}
-
 @end
 
 #pragma mark -
 
 @interface TBKTabBar ()
-@property (nonatomic, assign) TBKArrowLayer *arrowLayer;
+@property (nonatomic, retain) TBKArrowLayer *arrowLayer;
 @property (nonatomic, assign) CGFloat tabMargin;
 -(void) setArrowPositionAnimated:(BOOL)animated;
 @end
@@ -114,10 +110,10 @@
 		[tabBarItem removeFromSuperview];
 	}
 
-	[items release];
-	items = [aTabBarItemArray retain];
+	items = aTabBarItemArray;
 
-	if ([items count]) {
+	if ([items count])
+    {
 		[(TBKTabBarItem *)[items objectAtIndex:0] setSelected:YES];
 		self.selectedTabBarItem = [items objectAtIndex:0];
 		[self.delegate tabBar:self didSelectTabAtIndex:0];
@@ -201,17 +197,6 @@
 
 -(BOOL) isCustomizing {
 	return NO;
-}
-
-
-#pragma mark Memory
-
--(void) dealloc {
-	self.arrowLayer = nil;
-	self.delegate = nil;
-	self.selectedTabBarItem = nil;
-	self.items = nil;
-	[super dealloc];
 }
 
 @end
