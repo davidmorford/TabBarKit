@@ -41,7 +41,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 @synthesize selectedIndex;
 @synthesize displaysTabBarItemTitles;
 
-#pragma mark Initializer
+#pragma mark - Initializer
 
 -(id) initWithStyle:(TBKTabBarStyle)aStyle {
 	self = [super initWithNibName:nil bundle:nil];
@@ -59,7 +59,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 }
 
 
-#pragma mark UIViewController
+#pragma mark - UIViewController
 
 -(void) loadView {
 	[super loadView];
@@ -86,7 +86,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 }
 
 
-#pragma mark KVO
+#pragma mark - KVO
 
 -(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	#ifdef __KVODEBUG__
@@ -103,7 +103,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 }
 
 
-#pragma mark View Controler Loading
+#pragma mark - View Controler Loading
 
 -(void) setViewControllers:(NSArray *)controllers animated:(BOOL)animated {
 	self.viewControllers = controllers;
@@ -130,7 +130,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 }
 
 
-#pragma mark <TBKTabBarDelegate>
+#pragma mark - <TBKTabBarDelegate>
 
 -(void) tabBar:(TBKTabBar *)aTabBar didSelectTabAtIndex:(NSUInteger)anIndex {
 	UIViewController *vc = [self.viewControllers objectAtIndex:anIndex];
@@ -168,7 +168,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 }
 
 
-#pragma mark <UINavigationControllerDelegate>
+#pragma mark - <UINavigationControllerDelegate>
 
 -(void) navigationController:(UINavigationController *)nvc willShowViewController:(UIViewController *)vc animated:(BOOL)animated {
 	[vc setTabItem:nvc.tabItem];
@@ -220,10 +220,15 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 }
 
 
-#pragma mark UIInterfaceOrientation
+#pragma mark - UIInterfaceOrientation
 
 -(BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)anOrientation {
-	return [self.selectedViewController shouldAutorotateToInterfaceOrientation:anOrientation];
+    BOOL shouldRotate = YES;
+    if (selectedViewController && [selectedViewController respondsToSelector:@selector(shouldAutorotateToInterfaceOrientation:)])
+    {
+        shouldRotate = [self.selectedViewController shouldAutorotateToInterfaceOrientation:anOrientation];
+    }
+    return shouldRotate;
 }
 
 -(void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)anOrientation duration:(NSTimeInterval)aDuration {
@@ -272,7 +277,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 }
 
 
-#pragma mark Memory
+#pragma mark - Memory
 
 -(void) didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
