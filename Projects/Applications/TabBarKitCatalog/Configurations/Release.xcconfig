@@ -8,4 +8,6 @@
 #include "Application.xcconfig"
 #include "../../../Configurations/Release.xcconfig"
 
-//GCC_PREPROCESSOR_DEFINITIONS = NDEBUG
+//CODE_SIGN_ENTITLEMENTS = $(PROJECT_TREE_CLASSES_PATH)/ApplicationDelegate/Resources/PropertyLists/Entitlements.plist
+
+GCC_PREPROCESSOR_DEFINITIONS = NDEBUG

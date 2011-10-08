@@ -1,0 +1,14 @@
+
+//
+// AppStore
+//
+
+#include "Application.xcconfig"
+#include "../../../Configurations/Release.xcconfig"
+
+BUILD_PLATFORM_NAME_PATH        = $(BUILD_SHARED_LIBRARIES_PATH)/Release/$(SDK_NAME)
+CURRENT_PROJECT_VERSION         = $(BUILD_APPLICATION_VERSION)
+CODE_SIGN_IDENTITY              = iPhone Distribution
+GCC_PREPROCESSOR_DEFINITIONS    = NDEBUG APPSTORE
+GCC_OPTIMIZATION_LEVEL          = s
+VALIDATE_PRODUCT                = YES

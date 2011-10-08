@@ -14,7 +14,7 @@ Usage()
     builtin echo "iPhone Build Script, version 4.3\n"
     builtin echo "Usage: Build.command <SDKVersion> <BuildConfiguration>"
     builtin echo "\t<SDKVersion>         = A SDK Version"
-    builtin echo "\t\tAvailable          = [4.3]"
+    builtin echo "\t\tAvailable          = [5.0]"
     builtin echo "\t<BuildConfiguration> = A Build Configuration"
     builtin echo "\t\tAvailable          = [Debug | Profile | Release | AdHoc | Distribution]"
     builtin echo "\n"
