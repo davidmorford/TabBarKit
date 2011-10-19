@@ -6,8 +6,8 @@
 */
 
 #import <UIKit/UIKit.h>
-#import <TabBarKit/TBKTabBar.h>
-#import <TabBarKit/TBKTabBarItem.h>
+#import "TBKTabBar.h"
+#import "TBKTabBarItem.h"
 
 @class TBKTabBarView;
 @protocol  TBKTabBarControllerDelegate;
