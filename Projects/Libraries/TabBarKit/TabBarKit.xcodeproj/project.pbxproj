@@ -265,6 +265,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Your Company";
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "TabBarKit" */;
@@ -340,6 +341,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63894BE5103BD59B007C9CC9 /* Project.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 			};
 			name = Debug;
 		};
@@ -347,6 +352,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63894BE5103BD59B007C9CC9 /* Project.xcconfig */;
 			buildSettings = {
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 			};
 			name = Release;
 		};

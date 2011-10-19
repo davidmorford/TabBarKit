@@ -47,6 +47,16 @@
 		63F77EC812F007BD008C61E0 /* Super8@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63F77EB412F007BD008C61E0 /* Super8@2x.png */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		78D9E5D7144F419D0037CB86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78D9E5D3144F419D0037CB86 /* TabBarKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = TabBarKit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* TabBarKitCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabBarKitCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +111,7 @@
 		63F77EB412F007BD008C61E0 /* Super8@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Super8@2x.png"; path = "Source/Resources/Media/Images/Tabs/Super8@2x.png"; sourceTree = SOURCE_ROOT; };
 		63F7E3DA137656490053B106 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Configurations/Debug.xcconfig; sourceTree = SOURCE_ROOT; };
 		63F7E3DB137656490053B106 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Configurations/Release.xcconfig; sourceTree = SOURCE_ROOT; };
+		78D9E5D3144F419D0037CB86 /* TabBarKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TabBarKit.xcodeproj; path = ../../Libraries/TabBarKit/TabBarKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +292,7 @@
 		6384390E1040F20A00D29404 /* Projects */ = {
 			isa = PBXGroup;
 			children = (
+				78D9E5D3144F419D0037CB86 /* TabBarKit.xcodeproj */,
 			);
 			name = Projects;
 			sourceTree = "<group>";
@@ -332,6 +344,14 @@
 			path = Source/Resources/Media/Images/Tabs;
 			sourceTree = SOURCE_ROOT;
 		};
+		78D9E5D4144F419D0037CB86 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				78D9E5D8144F419D0037CB86 /* libTabBarKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,6 +379,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = Semantap;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "TabBarKitCatalog" */;
@@ -374,12 +395,28 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 78D9E5D4144F419D0037CB86 /* Products */;
+					ProjectRef = 78D9E5D3144F419D0037CB86 /* TabBarKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* TabBarKitCatalog */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		78D9E5D8144F419D0037CB86 /* libTabBarKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTabBarKit.a;
+			remoteRef = 78D9E5D7144F419D0037CB86 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
