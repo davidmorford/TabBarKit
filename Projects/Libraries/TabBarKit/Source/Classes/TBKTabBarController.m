@@ -200,7 +200,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 							 self.tabBar.frame = tabBarBounds;
 						 } 
 						 completion:^(BOOL finished){
-							 [UIView animateWithDuration:0.1 delay:0 
+							 [UIView animateWithDuration:0 delay:0 
 												 options:(UIViewAnimationOptionLayoutSubviews | UIViewAnimationOptionBeginFromCurrentState)
 											  animations:^{
 												  self.containerView.frame = CGRectMake(CGRectGetMinX(self.view.bounds), 
@@ -222,17 +222,8 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 
 #pragma mark - UIInterfaceOrientation
 
--(BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)anOrientation {
-    BOOL shouldRotate = YES;
-    if (selectedViewController && [selectedViewController respondsToSelector:@selector(shouldAutorotateToInterfaceOrientation:)])
-    {
-        shouldRotate = [self.selectedViewController shouldAutorotateToInterfaceOrientation:anOrientation];
-    }
-    return shouldRotate;
-}
-
--(void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)anOrientation duration:(NSTimeInterval)aDuration {
-	if (UIInterfaceOrientationIsPortrait(anOrientation)) {
+- (void)updateTabbarImagesForOrientation:(UIInterfaceOrientation)anOrientation {
+    if (UIInterfaceOrientationIsPortrait(anOrientation)) {
 		for (TBKTabBarItem *tabBarItem in self.tabBar.items) {
 			if (self.displaysTabBarItemTitles) {
 				tabBarItem.imageEdgeInsets = UIEdgeInsetsMake(0, 22, 11, 0);
@@ -256,6 +247,18 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 			[tabBarItem setNeedsDisplay];
 		}		
 	}
+}
+
+-(BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)anOrientation {
+    BOOL shouldRotate = YES;
+    if (selectedViewController && [selectedViewController respondsToSelector:@selector(shouldAutorotateToInterfaceOrientation:)])
+    {
+        shouldRotate = [self.selectedViewController shouldAutorotateToInterfaceOrientation:anOrientation];
+    }
+    return shouldRotate;
+}
+
+-(void) willRotateToInterfaceOrientation:(UIInterfaceOrientation)anOrientation duration:(NSTimeInterval)aDuration {
 	[self.selectedViewController willRotateToInterfaceOrientation:anOrientation duration:aDuration];
 }
 
@@ -264,6 +267,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 }
 
 -(void) willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)anOrientation duration:(NSTimeInterval)aDuration {
+    [self updateTabbarImagesForOrientation:anOrientation];
 	[self.selectedViewController willAnimateRotationToInterfaceOrientation:anOrientation duration:aDuration];
 }
 
@@ -276,6 +280,10 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 	[self.selectedViewController didRotateFromInterfaceOrientation:anOrientation];
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    [self updateTabbarImagesForOrientation:[UIApplication sharedApplication].statusBarOrientation];
+}
 
 #pragma mark - Memory
 
