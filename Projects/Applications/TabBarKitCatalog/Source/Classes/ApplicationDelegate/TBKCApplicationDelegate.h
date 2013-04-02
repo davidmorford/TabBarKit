@@ -20,8 +20,8 @@
 */
 @interface TBKCApplicationDelegate : NSObject <UIApplicationDelegate, TBKTabBarControllerDelegate>
 
-@property (nonatomic, retain) UIWindow *window;
-@property (nonatomic, retain) TBKTabBarController *tabBarController;
+@property (nonatomic, strong) UIWindow *window;
+@property (nonatomic, strong) TBKTabBarController *tabBarController;
 
 #pragma mark -
 

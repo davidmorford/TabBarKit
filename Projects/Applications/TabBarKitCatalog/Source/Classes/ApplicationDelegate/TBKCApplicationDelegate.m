@@ -33,11 +33,11 @@
 		tabBarController = [[TBKTabBarController alloc] initWithStyle:TBKTabBarStyleDefault];
 		tabBarController.delegate = self;
 		tabBarController.viewControllers = [NSArray arrayWithObjects:
-												 [[[UINavigationController alloc] initWithRootViewController:[[[TBKCMasterViewController alloc] init] autorelease]] autorelease],
-												 [[[UINavigationController alloc] initWithRootViewController:[[[TBKCDetailViewController alloc] init] autorelease]] autorelease],
-												 [[[UINavigationController alloc] initWithRootViewController:[[[TBKCImagesViewController alloc] init] autorelease]] autorelease],
-												 [[[UINavigationController alloc] initWithRootViewController:[[[TBKCSettingsViewController alloc] init] autorelease]] autorelease],
-												 [[[UINavigationController alloc] initWithRootViewController:[[[TBKCMoviesViewController alloc] init] autorelease]] autorelease],
+												 [[UINavigationController alloc] initWithRootViewController:[[TBKCMasterViewController alloc] init]],
+												 [[UINavigationController alloc] initWithRootViewController:[[TBKCDetailViewController alloc] init]],
+												 [[UINavigationController alloc] initWithRootViewController:[[TBKCImagesViewController alloc] init]],
+												 [[UINavigationController alloc] initWithRootViewController:[[TBKCSettingsViewController alloc] init]],
+												 [[UINavigationController alloc] initWithRootViewController:[[TBKCMoviesViewController alloc] init]],
 												 nil];
 		window.rootViewController = self.tabBarController;
 	}
@@ -45,11 +45,11 @@
 		tabBarController = [[TBKTabBarController alloc] initWithStyle:TBKTabBarStyleArrowIndicator];
 		tabBarController.delegate = self;
 		tabBarController.viewControllers = [NSArray arrayWithObjects:
-												 [[[UINavigationController alloc] initWithRootViewController:[[[TBKCMasterViewController alloc] init] autorelease]] autorelease],
-												 [[[UINavigationController alloc] initWithRootViewController:[[[TBKCDetailViewController alloc] init] autorelease]] autorelease],
-												 [[[UINavigationController alloc] initWithRootViewController:[[[TBKCImagesViewController alloc] init] autorelease]] autorelease],
-												 [[[UINavigationController alloc] initWithRootViewController:[[[TBKCSettingsViewController alloc] init] autorelease]] autorelease],
-												 [[[UINavigationController alloc] initWithRootViewController:[[[TBKCMoviesViewController alloc] init] autorelease]] autorelease],
+												 [[UINavigationController alloc] initWithRootViewController:[[TBKCMasterViewController alloc] init]],
+												 [[UINavigationController alloc] initWithRootViewController:[[TBKCDetailViewController alloc] init]],
+												 [[UINavigationController alloc] initWithRootViewController:[[TBKCImagesViewController alloc] init]],
+												 [[UINavigationController alloc] initWithRootViewController:[[TBKCSettingsViewController alloc] init]],
+												 [[UINavigationController alloc] initWithRootViewController:[[TBKCMoviesViewController alloc] init]],
 												 nil];
 		window.rootViewController = self.tabBarController;
 	}
@@ -66,9 +66,8 @@
 #pragma mark Memory
 
 -(void) dealloc {
-	[tabBarController release], tabBarController = nil;
-	[window release], window = nil;
-	[super dealloc];
+	tabBarController = nil;
+	window = nil;
 }
 
 @end

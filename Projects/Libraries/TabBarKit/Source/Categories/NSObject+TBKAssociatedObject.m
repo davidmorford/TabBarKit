@@ -4,15 +4,15 @@
 @implementation NSObject (TBKAssociatedObject)
 
 -(void) associateValue:(id)aValue withKey:(NSString *)aKey {
-	objc_setAssociatedObject(self, aKey, aValue, TBKAssociationPolicyRetainNonatomic);
+	objc_setAssociatedObject(self, [aKey cStringUsingEncoding:NSUTF8StringEncoding], aValue, TBKAssociationPolicyRetainNonatomic);
 }
 
 -(void) associateValue:(id)aValue withKey:(NSString *)aKey policy:(TBKAssociationPolicy)aPolicy;{
-	objc_setAssociatedObject(self, aKey, aValue, aPolicy);
+	objc_setAssociatedObject(self, [aKey cStringUsingEncoding:NSUTF8StringEncoding], aValue, aPolicy);
 }
 
 -(id) associatedValueForKey:(NSString *)aKey {
-	return objc_getAssociatedObject(self, aKey);
+	return objc_getAssociatedObject(self, [aKey cStringUsingEncoding:NSUTF8StringEncoding]);
 }
 
 -(void) removeAssociatedValueForKey:(NSString *)aKey {

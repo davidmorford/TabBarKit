@@ -25,9 +25,9 @@ enum {
 */
 @interface TBKTabBar : UIView
 
-@property (nonatomic, assign) id <TBKTabBarDelegate> delegate;
-@property (nonatomic, retain) NSArray *items;
-@property (nonatomic, retain) TBKTabBarItem *selectedTabBarItem;
+@property (nonatomic, weak) id <TBKTabBarDelegate> delegate;
+@property (nonatomic, strong) NSArray *items;
+@property (nonatomic, strong) TBKTabBarItem *selectedTabBarItem;
 
 @property (nonatomic, assign) TBKTabBarStyle tabBarStyle;
 

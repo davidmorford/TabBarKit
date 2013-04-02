@@ -3,4 +3,4 @@
 // DeploymentTarget.xcconfig
 //
 
-IPHONEOS_DEPLOYMENT_TARGET = 4.2 //latest_iphoneos
+IPHONEOS_DEPLOYMENT_TARGET = 6.0

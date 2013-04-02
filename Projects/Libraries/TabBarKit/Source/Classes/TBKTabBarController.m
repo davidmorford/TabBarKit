@@ -9,16 +9,16 @@ static CGFloat const TBKTabBarDefaultStyleHeight = 49.0;
 static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 
 @interface TBKMoreListController : UITableViewController
-@property (nonatomic, retain) NSArray *moreViewControllers;
-@property (nonatomic, assign) UIBarButtonItem *moreEditButtonItem;
+@property (nonatomic, strong) NSArray *moreViewControllers;
+@property (nonatomic, weak) UIBarButtonItem *moreEditButtonItem;
 @property (nonatomic, assign) BOOL allowsCustomizing;
 @end
 
 #pragma mark -
 
 @interface TBKTabBarController () <UINavigationControllerDelegate>
-@property (nonatomic, retain, readwrite) UINavigationController *moreNavigationController;
-@property (nonatomic, retain) UIView *containerView;
+@property (nonatomic, strong, readwrite) UINavigationController *moreNavigationController;
+@property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, assign) TBKTabBarStyle tabBarStyle;
 @property (nonatomic, assign) CGFloat tabBarHeight;
 @property (nonatomic, assign) BOOL displaysTabBarItemTitles;
@@ -69,11 +69,11 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 	[super viewDidLoad];
 	self.view.backgroundColor = [UIColor clearColor];
 		
-	self.containerView = [[[UIView alloc] initWithFrame:self.view.frame] autorelease];
+	self.containerView = [[UIView alloc] initWithFrame:self.view.frame];
 	self.view = self.containerView;
 	
-	self.tabBar = [[[TBKTabBar alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - self.tabBarHeight, CGRectGetWidth(self.view.bounds), self.tabBarHeight) 
-											  style:self.tabBarStyle] autorelease];
+	self.tabBar = [[TBKTabBar alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.bounds) - self.tabBarHeight, CGRectGetWidth(self.view.bounds), self.tabBarHeight) 
+											  style:self.tabBarStyle];
 	self.tabBar.delegate = self;
 	
 	[self.containerView addSubview:self.tabBar];
@@ -116,7 +116,7 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 		if ([controller isKindOfClass:[UINavigationController class]]) {
 			((UINavigationController *)controller).delegate = self;
 		}
-		TBKTabBarItem *tabItem = [[[TBKTabBarItem alloc] initWithImageName:controller.tabImageName style:self.tabBarStyle tag:tagIndex title:controller.title] autorelease];
+		TBKTabBarItem *tabItem = [[TBKTabBarItem alloc] initWithImageName:controller.tabImageName style:self.tabBarStyle tag:tagIndex title:controller.title];
 		[controllerTabs addObject:tabItem];
 		[controller setTabItem:tabItem];
 		[controller setTabController:self];
@@ -285,20 +285,13 @@ static CGFloat const TBKTabBarArrowIndicatorHeight = 44.0;
 
 -(void) viewDidUnload {
 	tabBar.delegate = nil;
-	[tabBar release]; tabBar = nil;
-    [containerView release]; containerView = nil;
+	 tabBar = nil;
+     containerView = nil;
 	[super viewDidUnload];
 }
 
 -(void) dealloc {
 	self.delegate = nil;
-	self.moreNavigationController = nil;
-	self.customizableViewControllers = nil;
-	self.selectedViewController = nil;
-	self.viewControllers = nil;
-	self.tabBar = nil;
-	self.containerView = nil;
-	[super dealloc];
 }
 
 @end
@@ -426,7 +419,7 @@ static NSString * const TBKTabControllerKey = @"TBKTabControllerKey";
 	static NSString *TBKMoreCellIdentifier = @"TBKMoreCellID";
 	UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:TBKMoreCellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TBKMoreCellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TBKMoreCellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	}
 	
@@ -475,10 +468,6 @@ static NSString * const TBKTabControllerKey = @"TBKTabControllerKey";
 	[super didReceiveMemoryWarning];
 }
 
--(void) dealloc {
-	self.moreViewControllers = nil;
-	[super dealloc];
-}
 
 @end
 

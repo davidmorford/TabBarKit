@@ -49,7 +49,7 @@
 #pragma mark -
 
 @interface TBKBadgeLayer : CAShapeLayer
-@property (nonatomic, assign) CATextLayer *countTextLayer;
+@property (nonatomic, weak) CATextLayer *countTextLayer;
 -(void) setCountString:(NSString *)aString;
 @end
 
@@ -98,26 +98,23 @@
 }
 
 
--(void) dealloc {
-	[super dealloc];
-}
 
 @end
 
 #pragma mark -
 
 @interface TBKTabBarItem ()
-@property (nonatomic, retain) NSString *imageName;
-@property (nonatomic, retain) UIImage *tabImage;
-@property (nonatomic, retain) UIImage *selectedTabImage;
+@property (nonatomic, strong) NSString *imageName;
+@property (nonatomic, strong) UIImage *tabImage;
+@property (nonatomic, strong) UIImage *selectedTabImage;
 @property (nonatomic, assign) TBKTabBarItemSelectionStyle selectionStyle;
 
-@property (nonatomic, retain) NSString *controllerTitle;
-@property (nonatomic, retain) NSString *tabTitle;
+@property (nonatomic, strong) NSString *controllerTitle;
+@property (nonatomic, strong) NSString *tabTitle;
 @property (nonatomic, assign) BOOL displayTitle;
 
-@property (nonatomic, assign) TBKTabBarItemSelectionLayer *selectionLayer;
-@property (nonatomic, assign) TBKBadgeLayer *badgeLayer;
+@property (nonatomic, strong) TBKTabBarItemSelectionLayer *selectionLayer;
+@property (nonatomic, strong) TBKBadgeLayer *badgeLayer;
 @end
 
 #pragma mark -
@@ -217,7 +214,6 @@
 
 -(void) setBadgeValue:(NSNumber *)aValue {
 	if ([badgeValue compare:aValue] != NSOrderedSame) {
-		[badgeValue release];
 		badgeValue = [aValue copy];
 	}
 	if (!self.badgeLayer) {
@@ -238,13 +234,7 @@
 #pragma mark -
 
 -(void) dealloc {
-	self.tabTitle = nil;
-	self.controllerTitle = nil;
 	self.badgeValue = nil;
-	self.imageName = nil;
-	self.tabImage = nil;
-	self.selectedTabImage = nil;
-	[super dealloc];
 }
 
 @end

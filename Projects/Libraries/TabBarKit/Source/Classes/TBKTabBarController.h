@@ -19,15 +19,15 @@
 */
 @interface TBKTabBarController : UIViewController <TBKTabBarDelegate>
 
-@property (nonatomic, assign) id <TBKTabBarControllerDelegate> delegate;
+@property (nonatomic, weak) id <TBKTabBarControllerDelegate> delegate;
 
-@property (nonatomic, retain) TBKTabBar *tabBar;
+@property (nonatomic, strong) TBKTabBar *tabBar;
 @property (nonatomic, assign) NSUInteger selectedIndex;
 
-@property (nonatomic, retain) NSArray *viewControllers;
-@property (nonatomic, retain) UIViewController *selectedViewController;
+@property (nonatomic, strong) NSArray *viewControllers;
+@property (nonatomic, strong) UIViewController *selectedViewController;
 
-@property (nonatomic, retain, readonly) UINavigationController *moreNavigationController;
+@property (nonatomic, strong, readonly) UINavigationController *moreNavigationController;
 @property (nonatomic, copy) NSArray *customizableViewControllers;
 
 #pragma mark Designated Initializer

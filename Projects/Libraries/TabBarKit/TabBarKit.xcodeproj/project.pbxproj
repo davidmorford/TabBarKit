@@ -327,6 +327,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63F7E3D2137655D40053B106 /* Debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -334,6 +336,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 63F7E3D3137655D40053B106 /* Release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

@@ -45,7 +45,7 @@
 	static NSString *CellIdentifier = @"CellIdentifier";
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 	if (cell == nil) {
-		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	}
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -61,7 +61,6 @@
 	TBKCContentViewController *contentViewController = [[TBKCContentViewController alloc] init];
 	contentViewController.hidesBottomBarWhenPushed = YES;
 	[self.navigationController pushViewController:contentViewController animated:TRUE];
-	[contentViewController release];
 }
 
 
@@ -75,8 +74,5 @@
 	[super didReceiveMemoryWarning];
 }
 
--(void) dealloc {
-	[super dealloc];
-}
 
 @end
