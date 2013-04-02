@@ -34,6 +34,7 @@
 		6384395F1040F75F00D29404 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6384381B1040EB5400D29404 /* Localizable.strings */; };
 		638439601040F76100D29404 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 638438191040EB5400D29404 /* InfoPlist.strings */; };
 		638F2F1B108AD8DF0021685E /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 638F2F1A108AD8DF0021685E /* Settings.bundle */; };
+		63A2B5CD170A5597006923B2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63A2B5CC170A5597006923B2 /* Default-568h@2x.png */; };
 		63D9E60C12C707C00083EEB8 /* Book.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9E60212C707C00083EEB8 /* Book.png */; };
 		63D9E60D12C707C00083EEB8 /* Book@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9E60312C707C00083EEB8 /* Book@2x.png */; };
 		63D9E61012C707C00083EEB8 /* Bookmarks.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D9E60612C707C00083EEB8 /* Bookmarks.png */; };
@@ -89,6 +90,7 @@
 		6384381C1040EB5400D29404 /* en */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6384383E1040F1D700D29404 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		638F2F1A108AD8DF0021685E /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = Source/Resources/Bundles/Settings.bundle; sourceTree = SOURCE_ROOT; };
+		63A2B5CC170A5597006923B2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		63D9E60212C707C00083EEB8 /* Book.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Book.png; path = Source/Resources/Media/Images/Tabs/Book.png; sourceTree = SOURCE_ROOT; };
 		63D9E60312C707C00083EEB8 /* Book@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Book@2x.png"; path = "Source/Resources/Media/Images/Tabs/Book@2x.png"; sourceTree = SOURCE_ROOT; };
 		63D9E60612C707C00083EEB8 /* Bookmarks.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bookmarks.png; path = Source/Resources/Media/Images/Tabs/Bookmarks.png; sourceTree = SOURCE_ROOT; };
@@ -176,6 +178,7 @@
 		6345E6301376585D005AF247 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				63A2B5CC170A5597006923B2 /* Default-568h@2x.png */,
 				6345E6311376585D005AF247 /* Default@2x~iphone.png */,
 				6345E6321376585D005AF247 /* Default~iphone.png */,
 				6345E6331376585D005AF247 /* LaunchPad-Landscape.png */,
@@ -411,6 +414,7 @@
 				6345E63D1376585D005AF247 /* Default~iphone.png in Resources */,
 				6345E63E1376585D005AF247 /* LaunchPad-Landscape.png in Resources */,
 				6345E63F1376585D005AF247 /* LaunchPad-Portrait.png in Resources */,
+				63A2B5CD170A5597006923B2 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
